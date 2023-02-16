@@ -1,4 +1,4 @@
-package com.example.springtaskmgr;
+package com.example.springtaskmgr.entities;
 
 import java.util.Date;
 

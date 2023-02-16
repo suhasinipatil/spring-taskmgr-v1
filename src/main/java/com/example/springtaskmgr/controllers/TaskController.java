@@ -1,5 +1,6 @@
-package com.example.springtaskmgr;
+package com.example.springtaskmgr.controllers;
 
+import com.example.springtaskmgr.entities.Task;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -36,7 +37,7 @@ public class TaskController {
     @GetMapping("/tasks/{id}")
     Task getTask(@PathVariable("id") Integer id){
         for(int i = 0; i < taskList.size(); i++){
-            if(taskList.get(i).id == id){
+            if(taskList.get(i).getId() == id){
                 return taskList.get(i);
             }
         }
@@ -46,7 +47,7 @@ public class TaskController {
     @DeleteMapping("/tasks/{id}")
     Task deleteTask(@PathVariable("id") Integer id){
         for(int i = 0; i < taskList.size(); i++){
-            if(taskList.get(i).id == id){
+            if(taskList.get(i).getId() == id){
                 Task task = taskList.get(i);
                 taskList.remove(i);
                 return task;
@@ -58,14 +59,14 @@ public class TaskController {
     @PatchMapping("/tasks/{id}")
     Task updateTask(@RequestBody Task task, @PathVariable("id") Integer id){
         for(int i = 0; i < taskList.size(); i++){
-            if(taskList.get(i).id == id){
+            if(taskList.get(i).getId() == id){
                 Task oldTask = taskList.get(i);
-                if(task.description != null)
-                    oldTask.setDescription(task.description);
-                if(task.dueDate != null)
-                    oldTask.setDueDate(task.dueDate);
-                if(task.title != null)
-                    oldTask.setTitle(task.title);
+                if(task.getDescription() != null)
+                    oldTask.setDescription(task.getDescription());
+                if(task.getDueDate() != null)
+                    oldTask.setDueDate(task.getDueDate());
+                if(task.getTitle() != null)
+                    oldTask.setTitle(task.getTitle());
                 return oldTask;
             }
         }
