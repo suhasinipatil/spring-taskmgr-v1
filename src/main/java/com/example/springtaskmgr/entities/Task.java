@@ -6,9 +6,9 @@ public class Task {
     Integer id;
     String title;
     String description;
-    Date dueDate;
+    String dueDate;
 
-    public Task(Integer id, String title, String description, Date dueDate) {
+    public Task(Integer id, String title, String description, String dueDate) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -39,11 +39,11 @@ public class Task {
         this.description = description;
     }
 
-    public Date getDueDate() {
+    public String getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(Date dueDate) {
+    public void setDueDate(String dueDate) {
         this.dueDate = dueDate;
     }
 }
