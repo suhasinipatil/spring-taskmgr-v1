@@ -16,5 +16,6 @@ Build jar and run
 
 ``
 ./gradlew bootJar
-ava -jar .\build\libs\spring-taskmgr-0.0.1-SNAPSHOT.jar
+
+java -jar .\build\libs\spring-taskmgr-0.0.1-SNAPSHOT.jar
 ``
